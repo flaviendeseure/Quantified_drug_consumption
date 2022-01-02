@@ -1,7 +1,5 @@
 # Quantified drug consumption
 
-![](/src/demo_site_web.gif)
-
 ## Getting Started
 ### Prerequisites
 1. Clone the repository
@@ -25,10 +23,38 @@ cd PATH_TO_API/api
 ```bash
 python manage.py runserver
 ```
-**Website**   
+#### Website   
 Simply browse on the website  
+![](/src/demo_site_web.gif)  
   
-**API**  
+#### API  
+**Parameters**  
+  
+|**Feature**| **Format**|  
+|:-:|:-:|   
+| age | int >= 18 |  
+| gender | {"Man", "Woman"} |  
+| education | {"Left school before 16 years", "Left school at 16 years", "Left school at 17 years", "Left school at 18 years", "Some college or university, no certificate or degree", "Professional certificate/ diploma", "University degree", "Master's degree","Doctoral degree"} |  
+| country | {"Australia", Canada", "New Zealand", "Other", "Republic of Ireland", "UK", "USA"} |  
+| ethnicity | {"Asian", Black", "Mixed-Black/Asian", "Mixed-White/Asian", "Mixed-White/Black", "Other", "White"}|  
+| nscore | 12 <= int <= 60 |  
+| escore | 16 <= int <= 59 |  
+| oscore | 24 <= int <= 60 |  
+| ascore | 12 <= int <= 60 |  
+| cscore | 17 <= int <= 57 |  
+| impulsivity | 1 <= int <= 10 |  
+| SS | 1 <= int <= 11 |  
+  
+**Results**
+|**Result**| **Description**|  
+|:-:|:-:|   
+| Addicted | Used last month |  
+| Not addicted | Never used in the last month |  
+| Used | Used |  
+| Never used | Never used |  
+| Daily addicted | Used yesterday |  
+| Not daily addicted | Not used yesterday |  
+  
 You can use this python file example (example_api.py)
 ```python
 import requests
@@ -65,8 +91,11 @@ if r.status_code == 200:
 else:
     print(r.text)
 ```
-### 
+## Objectives
+
+## Features preprocessing
+
+## Selected models
+![](/src/best_scores.png)  
 
 
-## Contact
-!
