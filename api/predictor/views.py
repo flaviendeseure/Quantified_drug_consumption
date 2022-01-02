@@ -43,7 +43,7 @@ def function_education(education):
         return 0.45468
     elif education == "Master's degree":
         return 1.16365
-    elif education == "Doctorate degree":
+    elif education == "Doctoral degree":
         return 1.98437
 
 def function_country(country):
@@ -67,11 +67,11 @@ def function_ethnicity(ethnicity):
         return [1,0,0,0,0,0,0]
     elif ethnicity == "Black":
         return [0,1,0,0,0,0,0]
-    elif ethnicity == "Mix_Asian_Black":
+    elif ethnicity == "Mixed-Black/Asian":
         return [0,0,1,0,0,0,0]
-    elif ethnicity == "Mix_White_Asian":
+    elif ethnicity == "Mixed-White/Asian":
         return [0,0,0,1,0,0,0]
-    elif ethnicity == "Mix_White_Black":
+    elif ethnicity == "Mixed-White/Black":
         return [0,0,0,0,1,0,0]
     elif ethnicity == "Other":
         return [0,0,0,0,0,1,0]
