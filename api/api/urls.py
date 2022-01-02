@@ -19,6 +19,7 @@ from predictor import views
 
 urlpatterns = [
     path('test/score/', views.call_model.as_view()),
+    path('api/score/', views.call_api.as_view()),
     path('test/', views.drug_test, name='drug_test'),
     path('', views.home, name='home')
 ]

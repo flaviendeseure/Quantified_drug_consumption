@@ -6,25 +6,32 @@ import numpy as np
 
 
 def function_age(age):
-    age = int(age)
-    if age < 25:
-        return -0.95197
-    elif age < 35:
-        return -0.07854
-    elif age < 45:
-        return 0.49788
-    elif age < 55:
-        return 1.09449
-    elif age < 65:
-        return 1.82213
-    else:
-        return 2.59171
+    try:
+        age = int(age)
+        if age < 18:
+            return None
+        elif age < 25:
+            return -0.95197
+        elif age < 35:
+            return -0.07854
+        elif age < 45:
+            return 0.49788
+        elif age < 55:
+            return 1.09449
+        elif age < 65:
+            return 1.82213
+        else:
+            return 2.59171
+    except:
+        return None
 
 def function_gender(gender):
     if gender == "Man":
         return -0.48246
-    else:
+    elif gender == "Woman":
         return 0.48246
+    else:
+        None
 
 def function_education(education):
     if education == "Left school before 16 years":
@@ -45,6 +52,8 @@ def function_education(education):
         return 1.16365
     elif education == "Doctoral degree":
         return 1.98437
+    else:
+        None
 
 def function_country(country):
     if country == 'Australia':
@@ -61,6 +70,8 @@ def function_country(country):
         return [0,0,0,0,0,1,0]
     elif country == 'USA':
         return [0,0,0,0,0,0,1]
+    else:
+        None
 
 def function_ethnicity(ethnicity):
     if ethnicity == "Asian":
@@ -77,6 +88,8 @@ def function_ethnicity(ethnicity):
         return [0,0,0,0,0,1,0]
     elif ethnicity == "White":
         return [0,0,0,0,0,0,1]
+    else:
+        None
 
 def function_nscore(nscore):
     nscore = int(nscore)
@@ -178,6 +191,8 @@ def function_nscore(nscore):
         return 2.82196
     elif nscore == 60:
         return 3.27393
+    else:
+        None
 
 def function_escore(escore):
     escore = int(escore)
@@ -269,6 +284,8 @@ def function_escore(escore):
         return 3.00537
     elif escore == 59:
         return 3.27393
+    else:
+        None
 
 def function_oscore(oscore):
     oscore = int(oscore)
@@ -345,7 +362,9 @@ def function_oscore(oscore):
     elif oscore == 59:
         return 2.44904
     elif oscore == 60:
-        return 2.90161  
+        return 2.90161
+    else:
+        None
 
 def function_ascore(ascore):
     ascore = int(ascore)
@@ -447,6 +466,8 @@ def function_ascore(ascore):
         return 3.15735
     elif ascore == 60:
         return 3.46436
+    else:
+        None
 
 def function_cscore(cscore):
     cscore = int(cscore)
@@ -532,6 +553,8 @@ def function_cscore(cscore):
         return 2.63199
     elif cscore == 57:
         return 3.00537
+    else:
+        None
 
 def function_impulsivity(impulsivity):
     impulsivity = int(impulsivity)
@@ -555,7 +578,8 @@ def function_impulsivity(impulsivity):
         return 1.86203
     elif impulsivity == 10:
         return 2.90161
-
+    else:
+        None
 
 def function_SS(SS):
     SS = int(SS)
@@ -581,7 +605,8 @@ def function_SS(SS):
         return 1.22470
     elif SS == 11:
         return 1.92173
-
+    else:
+        None
 
 class call_model(APIView):
     def get(self,request):
@@ -654,6 +679,85 @@ class call_model(APIView):
             # return response
             #return JsonResponse(response)
             return render(request, 'result.html', context=response)
+
+
+class call_api(APIView):
+    def get(self,request):
+        if request.method == 'GET':
+            drugs = ['Alcohol','Amphet','Amyl','Benzos','Caff','Cannabis','Coke','Crack','Ecstasy','Heroin','Ketamine','Legalh','LSD','Meth','Mushrooms','Nicotine','VSA']
+            results_monthly_addicted = {
+                "Alcohol":{0: "Not addicted", 1: "Addicted"},
+                "Cannabis": {0: "Not addicted", 1: "Addicted"},
+                "Nicotine":{0: "Not addicted", 1: "Addicted"},
+                "Amphet":{0: "Not addicted", 1: "Addicted"},
+                "Benzos":{0: "Not addicted", 1: "Addicted"},
+                "Coke": {0: "Not addicted", 1: "Addicted"},
+                "Ecstasy": {0: "Not addicted", 1: "Addicted"},
+                "Legalh":{0: "Not addicted", 1: "Addicted"}
+            }
+            results_used = {
+                "Amyl":{0: "Never used", 1: "Used"}, 
+                "Crack":{0: "Never used", 1: "Used"}, 
+                "Heroin":{0: "Never used", 1: "Used"}, 
+                "Ketamine":{0: "Never used", 1: "Used"}, 
+                "Meth":{0: "Never used", 1: "Used"}, 
+                "VSA":{0: "Never used", 1: "Used"},
+                "LSD":{0: "Never used", 1: "Used"},
+                "Mushrooms":{0: "Never used", 1: "Used"}
+            }
+            results_daily = {
+                "Caff":{0: "Not daily addicted", 1: "Daily addicted"}
+            }
+
+            # get sound from request
+            age = function_age(request.GET.get('age'))
+            gender = function_gender(request.GET.get('gender'))
+            education = function_education(request.GET.get('education'))
+            country = function_country(request.GET.get('country'))
+            ethnicity = function_ethnicity(request.GET.get('ethnicity'))
+            nscore = function_nscore(request.GET.get('nscore'))
+            escore = function_escore(request.GET.get('escore'))
+            oscore = function_oscore(request.GET.get('oscore'))
+            ascore = function_ascore(request.GET.get('ascore'))
+            cscore = function_cscore(request.GET.get('cscore'))
+            impulsivity = function_impulsivity(request.GET.get('impulsivity'))
+            SS = function_SS(request.GET.get('SS'))
+
+            if (age==None) or (gender==None) or (education==None) or (country==None) or (ethnicity==None) or (nscore==None) or (escore==None) or (oscore==None) or (ascore==None) or (cscore==None) or (impulsivity==None) or (SS==None):
+               return JsonResponse(
+                    {"api": "Bad request, please check your input"}, 
+                    status=400
+                ) 
+            else:
+                vector = [age, gender, education] + country + ethnicity + [nscore, escore, oscore, ascore, cscore, impulsivity, SS]
+                vector = np.array([vector])
+
+                # predict based on vector
+                prediction_alcohol = PredictorConfig.alcohol.predict(vector)[0]
+                prediction_amphet = PredictorConfig.amphet.predict(vector)[0]
+                prediction_amyl = PredictorConfig.amyl.predict(vector)[0]
+                prediction_benzos = PredictorConfig.benzos.predict(vector)[0]
+                prediction_caff = PredictorConfig.caff.predict(vector)[0]
+                prediction_cannabis = PredictorConfig.cannabis.predict(vector)[0]
+                prediction_coke = PredictorConfig.coke.predict(vector)[0]
+                prediction_crack = PredictorConfig.crack.predict(vector)[0]
+                prediction_ecstasy = PredictorConfig.ecstasy.predict(vector)[0]
+                prediction_heroin = PredictorConfig.heroin.predict(vector)[0]
+                prediction_ketamine = PredictorConfig.ketamine.predict(vector)[0]
+                prediction_legalh = PredictorConfig.legalh.predict(vector)[0]
+                prediction_lsd = PredictorConfig.lsd.predict(vector)[0]
+                prediction_meth = PredictorConfig.meth.predict(vector)[0]
+                prediction_mushrooms = PredictorConfig.mushrooms.predict(vector)[0]
+                prediction_nicotine = PredictorConfig.nicotine.predict(vector)[0]
+                prediction_vsa = PredictorConfig.vsa.predict(vector)[0]
+                
+                predictions = [prediction_alcohol,prediction_amphet,prediction_amyl,prediction_benzos,prediction_caff,prediction_cannabis,prediction_coke,prediction_crack,prediction_ecstasy,prediction_heroin,prediction_ketamine,prediction_legalh,prediction_lsd,prediction_meth,prediction_mushrooms,prediction_nicotine,prediction_vsa]
+                    
+                # build response
+                response = {drug: results_monthly_addicted[drug][pred] if drug in results_monthly_addicted.keys() else results_used[drug][pred] if drug in results_used.keys() else results_daily[drug][pred] for drug, pred in zip(drugs, predictions)}
+                # return response
+                return JsonResponse(response)
+            
 
 def drug_test(request):
     return render(request, 'test.html')
