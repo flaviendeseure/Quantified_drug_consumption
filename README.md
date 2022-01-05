@@ -168,7 +168,7 @@ else:
     print(r.text)
 ```
 
-## Modeling
+## Data Vizualisation
 ### Features
 The following graph describes the repartition of the number of drugs used per responders. We can clearly identify two groups of people:
 - people who have tried less than 6 drugs (47.53%)
@@ -196,14 +196,64 @@ Drop drug that will not be used for modelling: Choc (performances too low due to
 - Then we group the classes into binary classes
 
 ## Modeling
- 
+**Metrics**
+- Accuracy
+- Balanced accuracy
+- Confusion matrix  
+  
+**Technics used (imbalanced data)**
+- Weighting
+- Sampling: SMOTE
+  
+**Phases**  
+- Initial classes  
+We keep the original classes and see what we get.
+  - Original models and data
+  - Weighting features
+  - Sampling features  
+  
+- New classes  
+We create our own classes to obtain better results.
+  - Original models and data
+  - Weighting features
+  - Sampling features  
+  
+- Tuning hyperparameters  
 
-## Selected models
+Finally we obtained the following evaluation balanced accuracy scores:  
 ![](/src/best_scores.png)  
 
+## Selected models
+| Drug      | Model               |   
+|-----------|---------------------|  
+| Alcohol   | Logistic Regression |  
+| Amphet    | Logistic Regression |  
+| Amyl      | Logistic Regression |  
+| Benzos    | Logistic Regression |  
+| Caff      | Logistic Regression |  
+| Cannabis  | Logistic Regression |  
+| Coke      | SVC                 |  
+| Crack     | Logistic Regression |  
+| Esctasy   | SVC                 |  
+| Heroin    | SVC                 |  
+| Ketamine  | SVC                 |  
+| Legalh    | SVC                 |  
+| LSD       | SVC                 |  
+| Meth      | Logistic Regression |  
+| Mushrooms | BernoulliNB         |  
+| Nicotine  | BernoulliNB         |  
+| VSA       | Logistic Regression |  
+
 ## Conclusion
-
-
+Finally the best method to overcome the imbalanced classes in targets was weighting. Thus, we have achieved a mean of 71.24% of balanced accuracy.  
+To conclude majors difficulties we encounter were. 
+- Lack of data
+- Imbalanced classes for the target
+- Preprocessed features
+- Biased dataset: 
+  - young population
+  - most people comes from UK
+   
 ## Authors
 - [Flavien Deseure--Charron](https://github.com/flaviendeseure)
 - [Benjamin Demouge](https://github.com/benjamindemouge)
