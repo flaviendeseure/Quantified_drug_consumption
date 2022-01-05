@@ -13,6 +13,8 @@
     - [Website](#website)
     - [API](#api)
 - [Preprocessing](#preprocessing)
+  - [Features](#features)
+  - [Targets](#targets)
 - [Modeling](#modeling)
 - [Selected models](#selected-models)
 - [Conclusion](#conclusion)
@@ -164,6 +166,19 @@ else:
 ```
 
 ## Preprocessing
+### Features
+1. **Feature selection**  
+Drop feature that will not be used for modelling: ID   
+  
+2. **Feature encoding**  
+Encoding have already been performed on the original dataset, so we just changed the encoding for country and ethnicity (one hot) because there are not ordinal variables.
+  
+### Targets
+1. **Target selection**  
+Drop drug that will not be used for modelling: Choc (performances too low due to the popularity of this drug) and Semer(fictif)  
+  
+2. **Target encoding**  
+    1. ff
 
 
 ## Modeling
