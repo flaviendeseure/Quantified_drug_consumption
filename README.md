@@ -2,8 +2,8 @@
 ⚠️ This Readme is a short summary of our project and does not reflect the whole process. To get more details about our approach, please refer to the following documents:
 - Our complete Notebook: [Quantified_drug_consumption_notebook.ipynb](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/Quantified_drug_consumption_notebook.ipynb)
 - The html version of the notebook: [Quantified_drug_consumption_notebook.html](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/Quantified_drug_consumption_notebook.html)
-- Our powerpoint presentation: [powerpoint.pptx](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/powerpoint.pptx)
-  
+- Our powerpoint presentation: [[PPT]Quantified_drug_consumption_flavien_deseure--charron_benjamin_demouge](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/[PPT]Quantified_drug_consumption_flavien_deseure--charron_benjamin_demouge.pdf)
+
 ## Table of Contents
 - [About](#about)
 - [Getting Started](#getting-started)
