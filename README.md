@@ -12,6 +12,9 @@
   - [Website & API](#website-&-api)
     - [Website](#website)
     - [API](#api)
+- [Data Vizualisation](#data-vizualisation)
+  - [Features](#features)
+  - [Targets](#targets)
 - [Preprocessing](#preprocessing)
   - [Features](#features)
   - [Targets](#targets)
@@ -165,6 +168,17 @@ else:
     print(r.text)
 ```
 
+## Modeling
+### Features
+The following graph describes the repartition of the number of drugs used per responders. We can clearly identify two groups of people:
+- people who have tried less than 6 drugs (47.53%)
+- people who have tried more than 7 drugs (52.47%)
+![](/src/repartition_nb_drugs.png)  
+
+### Targets
+The following graph describes the repartition for each drug of each classes. As expected, we have an imbalanced repartition of data for each class given that for most drugs, majority of people didn't consume drugs.   
+![](/src/repartition_class_drugs.png)   
+
 ## Preprocessing
 ### Features
 1. **Feature selection**  
@@ -178,11 +192,11 @@ Encoding have already been performed on the original dataset, so we just changed
 Drop drug that will not be used for modelling: Choc (performances too low due to the popularity of this drug) and Semer(fictif)  
   
 2. **Target encoding**  
-    1. ff
-
+- First we keep the 7 classes
+- Then we group the classes into binary classes
 
 ## Modeling
-
+ 
 
 ## Selected models
 ![](/src/best_scores.png)  
