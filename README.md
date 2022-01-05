@@ -3,7 +3,22 @@
 - Our complete Notebook: [Quantified_drug_consumption_notebook.ipynb](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/Quantified_drug_consumption_notebook.ipynb)
 - The html version of the notebook: [Quantified_drug_consumption_notebook.html](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/Quantified_drug_consumption_notebook.html)
 - Our powerpoint presentation: [powerpoint.pptx](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/powerpoint.pptx)
-
+  
+## Table of Contents
+- [About](#about)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Notebook](#notebook)
+  - [Website & API](#website-&-api)
+    - [Website](#website)
+    - [API](#api)
+- [Preprocessing](#preprocessing)
+- [Modeling](#modeling)
+- [Selected models](#selected-models)
+- [Conclusion](#conclusion)
+- [Authors](#authors)
+   
+  
 ## About
 The objective of this project is to carry out a Data Science project from an imposed dataset. We get the following database: [Drug Consumption Quantified](https://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29) from UCI Machine Learning repository.  
   
@@ -17,17 +32,35 @@ and 19 central nervous system psychoactive drugs with the following possibilitie
 |Never Used | Used over a Decade Ago | Used in Last Decade | Used in Last Year | Used in Last Month | Used in Last Week | Used in Last Day |
 |-----------|------------------------|---------------------|-------------------|--------------------|-------------------|------------------|
    
-The authors of the survey showed that there is a relationship between risk of addiction to drugs and personnality attributes.   
-
+The authors of the survey showed that there is a relationship between risk of addiction to drugs and personnality attributes.    
+ 
 <p align="center">
   <img src="/src/relationships_drugs_personaliy.jpg">
 </p>  
 
 From this dataset, we choose to address the following problematic:  
-> **How can we model the risk of addiction to a drug based on personnality test?**
-
-
-
+<h3 align="center"><strong>How can we model the risk of addiction to a drug based on personnality test?</strong></h3>  
+    
+</br>
+     
+We choose the following drugs with the following classes to answer the problematic:
+- For Alcohol, Cannabis, Nicotine, Amphet, Benzos, Coke, Ecstasy, Legalh, LSD, Mushrooms  
+   
+| Not addicted | Addicted |  
+|--------------|----------|  
+  
+- For Amyl, Crack, Heroin, Ketamine, Meth, VSA  
+  
+| Never Used | Used |   
+|------------|------|  
+  
+- For Caff  
+  
+| Not daily addicted | Daily addicted |  
+|--------------------|----------------|  
+  
+</br>
+  
 This repository contains:  
 - Drug Consumption Quantified dataset (if the weblink stop working)
 - Requirements file
@@ -35,7 +68,8 @@ This repository contains:
 - Python Web application Django and API which predicts the addiction to the drugs.
 - An example of api used
 - PowerPoint Presentation of the project
-- Final trained models for each drugs
+- Final trained models for each drugs   
+  
 
 ## Getting Started
 ### Prerequisites
