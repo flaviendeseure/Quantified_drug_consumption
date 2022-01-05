@@ -29,9 +29,14 @@ The objective of this project is to carry out a Data Science project from an imp
   
 It is derived from an online survey conducted between 2011 and 2012 among 1885 respondents aged 18 years and older from English-speaking countries.
 It collects demographic informations, three personality tests:
-- Big Five traits (NEO-FFI-R), 
-- impulsivity (BIS-11), 
-- sensation seeking (ImpSS)   
+- NEO-FFI-R: The Big Five personality test measures the five personality factors that psychologists have determined are core to our personality makeup.
+  - Nscore:	Neuroticism - How sensitive a person is to stress and negative emotional triggers.
+  - Escore: Extraversion - How much a person is energized by the outside world.	
+  - Oscore: Openness - How open a person is to new ideas and experiences.	
+  - Ascore: Agreeableness - How much a person puts others' interests and needs ahead of their own.	
+  - Cscore: Conscientiousness - How goal-directed, persistent, and organized a person is.	
+- BIS11: assess the personality/behavioral construct of impulsiveness 	
+- ImpSS: assess various personality characteristics and behaviors related to impulsivity and sensation seeking
    
 and 19 central nervous system psychoactive drugs with the following possibilities:
 |Never Used | Used over a Decade Ago | Used in Last Decade | Used in Last Year | Used in Last Month | Used in Last Week | Used in Last Day |
@@ -246,7 +251,7 @@ Finally we obtained the following evaluation balanced accuracy scores:
 
 ## Conclusion
 Finally the best method to overcome the imbalanced classes in targets was weighting. Thus, we have achieved a mean of 71.24% of balanced accuracy.  
-To conclude majors difficulties we encounter were. 
+To conclude majors difficulties we encounter were: 
 - Lack of data
 - Imbalanced classes for the target
 - Preprocessed features
