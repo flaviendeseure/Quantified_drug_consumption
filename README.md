@@ -5,26 +5,37 @@
 - Our powerpoint presentation: [powerpoint.pptx](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/powerpoint.pptx)
 
 ## About
-The objective of this project is to carry out a Data Science project from an imposed dataset. Our dataset is [Drug Consumption Quantified](https://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29) from UCI Machine Learning repository.
+The objective of this project is to carry out a Data Science project from an imposed dataset. We get the following database: [Drug Consumption Quantified](https://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29) from UCI Machine Learning repository.  
+  
+It is derived from an online survey conducted between 2011 and 2012 among 1885 respondents aged 18 years and older from English-speaking countries.
+It collects demographic informations, three personality tests:
+- Big Five traits (NEO-FFI-R), 
+- impulsivity (BIS-11), 
+- sensation seeking (ImpSS)   
+   
+and 19 central nervous system psychoactive drugs with the following possibilities:
+|Never Used | Used over a Decade Ago | Used in Last Decade | Used in Last Year | Used in Last Month | Used in Last Week | Used in Last Day |
+|-----------|------------------------|---------------------|-------------------|--------------------|-------------------|------------------|
+   
+The authors of the survey showed that there is a relationship between risk of addiction to drugs and personnality attributes.   
 
-Our data set is derived from an online survey conducted between 2011 and 2012 among 1885 respondents aged 18 years and older from English-speaking countries.
-This survey collected personality characteristics, demographic information, and legal and illegal drug use from participants.
-Seven personality attributes were measured by a combination of 3 questionnaires:
-NEO-FFI-R 
-BIS-11
-ImpSS 
-Finally, participants were asked about their use of 19 legal and illegal drugs 
+<p align="center">
+  <img src="/src/relationships_drugs_personaliy.jpg">
+</p>  
 
+From this dataset, we choose to address the following problematic:  
+> **How can we model the risk of addiction to a drug based on personnality test?**
 
-[Link to Google](https://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29)
 
 
 This repository contains:  
-- The Python Notebook (Analysis + DataViz) of the Polish Companies Bankruptcy Dataset with ML models to predict if a company will make bankrupt or not.
-- Python API with Flask to predict easily if a company will make bankrupt or not.
+- Drug Consumption Quantified dataset (if the weblink stop working)
+- Requirements file
+- Python Notebook (ipynb and html)
+- Python Web application Django and API which predicts the addiction to the drugs.
+- An example of api used
 - PowerPoint Presentation of the project
-- The different models trained on the dataset.
-- 
+- Final trained models for each drugs
 
 ## Getting Started
 ### Prerequisites
