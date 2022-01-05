@@ -49,7 +49,7 @@ The authors of the survey showed that there is a relationship between risk of ad
 </p>  
 
 From this dataset, we choose to address the following problematic:  
-<h3 align="center"><strong>How can we model the risk of addiction to a drug based on personnality test?</strong></h3>  
+<h3 align="center"><strong>How can we model the risk of addiction to a drug based on personality and demographic data?</strong></h3>  
     
 </br>
      
