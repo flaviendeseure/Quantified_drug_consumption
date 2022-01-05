@@ -1,6 +1,30 @@
 # Quantified drug consumption
+⚠️ This Readme is a short summary of our project and does not reflect the whole process. To get more details about our approach, please refer to the following documents:
+- Our complete Notebook: [Quantified_drug_consumption_notebook.ipynb](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/Quantified_drug_consumption_notebook.ipynb)
+- The html version of the notebook: [Quantified_drug_consumption_notebook.html](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/Quantified_drug_consumption_notebook.html)
+- Our powerpoint presentation: [powerpoint.pptx](https://github.com/flaviendeseure/Quantified_drug_consumption/blob/main/powerpoint.pptx)
 
-![](/src/demo_site_web.gif)
+## About
+The objective of this project is to carry out a Data Science project from an imposed dataset. Our dataset is [Drug Consumption Quantified](https://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29) from UCI Machine Learning repository.
+
+Our data set is derived from an online survey conducted between 2011 and 2012 among 1885 respondents aged 18 years and older from English-speaking countries.
+This survey collected personality characteristics, demographic information, and legal and illegal drug use from participants.
+Seven personality attributes were measured by a combination of 3 questionnaires:
+NEO-FFI-R 
+BIS-11
+ImpSS 
+Finally, participants were asked about their use of 19 legal and illegal drugs 
+
+
+[Link to Google](https://archive.ics.uci.edu/ml/datasets/Drug+consumption+%28quantified%29)
+
+
+This repository contains:  
+- The Python Notebook (Analysis + DataViz) of the Polish Companies Bankruptcy Dataset with ML models to predict if a company will make bankrupt or not.
+- Python API with Flask to predict easily if a company will make bankrupt or not.
+- PowerPoint Presentation of the project
+- The different models trained on the dataset.
+- 
 
 ## Getting Started
 ### Prerequisites
@@ -25,10 +49,38 @@ cd PATH_TO_API/api
 ```bash
 python manage.py runserver
 ```
-**Website**   
+#### Website   
 Simply browse on the website  
+![](/src/demo_site_web.gif)  
   
-**API**  
+#### API  
+**Parameters**  
+  
+|**Feature**| **Format**|  
+|:-:|:-:|   
+| age | int >= 18 |  
+| gender | {"Man", "Woman"} |  
+| education | {"Left school before 16 years", "Left school at 16 years", "Left school at 17 years", "Left school at 18 years", "Some college or university, no certificate or degree", "Professional certificate/ diploma", "University degree", "Master's degree","Doctoral degree"} |  
+| country | {"Australia", Canada", "New Zealand", "Other", "Republic of Ireland", "UK", "USA"} |  
+| ethnicity | {"Asian", Black", "Mixed-Black/Asian", "Mixed-White/Asian", "Mixed-White/Black", "Other", "White"}|  
+| nscore | 12 <= int <= 60 |  
+| escore | 16 <= int <= 59 |  
+| oscore | 24 <= int <= 60 |  
+| ascore | 12 <= int <= 60 |  
+| cscore | 17 <= int <= 57 |  
+| impulsivity | 1 <= int <= 10 |  
+| SS | 1 <= int <= 11 |  
+  
+**Results**
+|**Result**| **Description**|  
+|:-:|:-:|   
+| Addicted | Used last month |  
+| Not addicted | Never used in the last month |  
+| Used | Used |  
+| Never used | Never used |  
+| Daily addicted | Used yesterday |  
+| Not daily addicted | Not used yesterday |  
+  
 You can use this python file example (example_api.py)
 ```python
 import requests
@@ -65,8 +117,19 @@ if r.status_code == 200:
 else:
     print(r.text)
 ```
-### 
+
+## Preprocessing
 
 
-## Contact
-!
+## Modeling
+
+
+## Selected models
+![](/src/best_scores.png)  
+
+## Conclusion
+
+
+## Authors
+- [Flavien Deseure--Charron](https://github.com/flaviendeseure)
+- [Benjamin Demouge](https://github.com/benjamindemouge)
